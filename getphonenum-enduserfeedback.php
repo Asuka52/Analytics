@@ -10,9 +10,6 @@ $mail_add=array();
 $matche1=array();
 $matche3=array();
 $pnum=array();
-$short_url=array();
-$pnum=array();
-$mail_add=array();
 
 $input=$argv[1];
 
