@@ -4,12 +4,8 @@
 require 'Net/IPv4.php';
 
 function getIPFromReceived($str){
-  //$match="";
-  //echo $str. "\n";
+
   $ips=array();
-  //if(strstr($str, "Received: from")){
-  //if(strstr($str, "X-Received:")){
-  //echo "X\n";
   $split=explode(" ", $str);
   //var_dump($split);
   for($i=0; $i<count($split); $i++){
@@ -18,10 +14,6 @@ function getIPFromReceived($str){
       $ips[]="[".$ip_candidate."]";
     }
   }
-  //preg_match("/\[.+?\]/", $str, $match);
-  //echo "in Received:". $str ."\n";
-  //}
-
   return $ips;
 }
 
@@ -90,18 +82,15 @@ while(!feof($fr)){
     //var_dump($matches);
   }
   for($i=0; $i<count($matches[0]); $i++){
-    //echo $matches[0][$i]. "\n";
     $url=$matches[0][$i];
     $url=parse_url($url);
     $domain=$url['host'];
-    //              fprintf($fw, "%s %s %s\n", $input, $domain, gethostbyname($domain));
     fprintf($fw, "%s %s\n", $domain, gethostbyname($domain));
   }
   
  }
 fclose($fw);
 fclose($fr);
-
 ?>
 
   
