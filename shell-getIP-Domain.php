@@ -13,6 +13,7 @@
 $cmd=array();
 
 // Value
+
 $output = "memo04.txt";
 //$output = $argv[1];
 //$dir = $argv[2];
