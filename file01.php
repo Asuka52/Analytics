@@ -8,6 +8,7 @@ function getIPFromData($str){
     return $ips[0];
 
   }
+  
 }
 
 function getIPPathFromReceived($str){
